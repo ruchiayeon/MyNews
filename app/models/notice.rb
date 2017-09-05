@@ -20,7 +20,9 @@ class Notice < ApplicationRecord
             url=URI.encode("https://www.google.co.kr/search?q=#{keyw}&biw=1740&bin=540&gbv1&tbm=nws#ei=&start=#{page}&sa=N")
                 
                 data = Nokogiri::HTML(open(url).read.encode("UTF-8"))
+                p data
                 contents = data.css("div.g")
+                p contents
                 contents.each do |notice|
                     p notice  #하나하나 디버깅하기 따로뺴서 로그를 지속적으로 확인해야한다. 
                     p "===="
