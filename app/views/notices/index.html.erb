@@ -1,0 +1,34 @@
+<p id="notice"><%= notice %></p>
+
+<h1>myNews</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Link</th>
+      <th>Writer</th>
+      <th>Date</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+ 
+  <tbody>
+    <meta charset="UTF-8","euc-kr">
+    <% @notices.each do |notice| %>
+      <tr>
+        <td><%= notice.title %></td>
+        <td><%= notice.link %></td>
+        <td><%= notice.writer %></td>
+        <td><%= notice.created_on %></td>
+        <td><%= link_to 'Show', notice %></td>
+        <td><%= link_to 'Edit', edit_notice_path(notice) %></td>
+        <td><%= link_to 'Destroy', notice, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'myNews', new_notice_path %>

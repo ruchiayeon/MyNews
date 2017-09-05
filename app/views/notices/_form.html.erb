@@ -1,0 +1,38 @@
+<meta charset="UTF-8","euc-kr">
+<%= form_with(model: notice, local: true) do |form| %>
+  <% if notice.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(notice.errors.count, "error") %> prohibited this notice from being saved:</h2>
+
+      <ul>
+      <% notice.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :title %>
+    <%= form.text_field :title, id: :notice_title %>
+  </div>
+
+  <div class="field">
+    <%= form.label :link %>
+    <%= form.text_field :link, id: :notice_link %>
+  </div>
+
+  <div class="field">
+    <%= form.label :writer %>
+    <%= form.text_field :writer, id: :notice_writer %>
+  </div>
+
+  <div class="field">
+    <%= form.label :created_on %>
+    <%= form.date_select :created_on, id: :notice_created_on %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
