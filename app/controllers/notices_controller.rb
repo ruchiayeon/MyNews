@@ -4,7 +4,7 @@ class NoticesController < ApplicationController
   # GET /notices
   # GET /notices.json
   def index
-    Notice.crawling(params[:search])
+    Notice.crawling
     @notices = Notice.all.reverse
     
   end
