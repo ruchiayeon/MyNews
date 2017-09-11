@@ -9,36 +9,31 @@ class Notice < ApplicationRecord
     def self.crawling
         
        
-        for i in 1..3
+        for i in 1..10
+        
             
-             for i in 1..2
-                         
             url=URI.encode("http://media.daum.net/breakingnews/?page=#{i}")
                      
             data = Nokogiri::HTML(open(url).read.encode("UTF-8"))
             
             
-            contents = data.css("div.box_etc")
+            contents = data.css("div.cont_thumb")
             
           
             
             contents.each do |notice|
+                  #하나하나 디버깅하기 따로뺴서 로그를 지속적으로 확인해야한다. 
                 
-                p notice  #하나하나 디버깅하기 따로뺴서 로그를 지속적으로 확인해야한다. 
-                
-                 
                 title = notice.css("a.link_txt").text.strip
-                
                 writer = notice.css("span.info_news").text.strip
-                p title 
                 
+                p title 
                 p writer
                Notice.create(
                     :title => title,
                     :writer => writer,
                     )
                 end
-            end
         end
     end
 end
