@@ -29,6 +29,7 @@ class Notice < ApplicationRecord
                 
                 p title 
                 p writer
+                
                Notice.create(
                     :title => title,
                     :writer => writer,
