@@ -21,7 +21,7 @@ class Notice < ApplicationRecord
             
           
             
-            contents.each do |notice|
+            row(contents).each do |notice|
                   #하나하나 디버깅하기 따로뺴서 로그를 지속적으로 확인해야한다. 
                 
                 title = notice.css("a.link_txt").text.strip

@@ -14,7 +14,7 @@ ActiveRecord::Schema.define(version: 20170809071951) do
 
   create_table "notices", force: :cascade do |t|
     t.string "title"
-    t.string "link"
+    #t.string "link"
     t.string "writer"
     t.date "created_on"
     t.datetime "created_at", null: false
