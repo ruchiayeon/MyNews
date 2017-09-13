@@ -16,7 +16,7 @@ class NoticesController < ApplicationController
 
   # GET /notices/new
   def new
-    @notice = Notice.new
+    @notices = Notice.new
   end
 
   # GET /notices/1/edit
@@ -26,15 +26,15 @@ class NoticesController < ApplicationController
   # POST /notices
   # POST /notices.json
   def create
-    @notice = Notice.all.new(params[:notices])
+    @notices = Notice.new(params[:notices])
 
     respond_to do |format|
-      if @notice.save
-        format.html { redirect_to @notice, notice: 'Notice was successfully created.' }
+      if @notices.save
+        format.html { redirect_to @notices, notice: 'Notice was successfully created.' }
         format.json { render :show, status: :created, location: @notice }
       else
         format.html { render :new }
-        format.json { render json: @notice.errors, status: :unprocessable_entity }
+        format.json { render json: @notices.errors, status: :unprocessable_entity }
       end
     end
   end
@@ -43,12 +43,12 @@ class NoticesController < ApplicationController
   # PATCH/PUT /notices/1.json
   def update
     respond_to do |format|
-      if @notice.update(params[:notice])
-        format.html { redirect_to @notice, notice: 'Notice was successfully updated.' }
-        format.json { render :show, status: :ok, location: @notice }
+      if @notices.update(params[:notice])
+        format.html { redirect_to @notices, notice: 'Notice was successfully updated.' }
+        format.json { render :show, status: :ok, location: @notices }
       else
         format.html { render :edit }
-        format.json { render json: @notice.errors, status: :unprocessable_entity }
+        format.json { render json: @notices.errors, status: :unprocessable_entity }
       end
     end
   end
@@ -56,7 +56,7 @@ class NoticesController < ApplicationController
   # DELETE /notices/1
   # DELETE /notices/1.json
   def destroy
-    @notice.destroy
+    @notices.destroy
     respond_to do |format|
       format.html { redirect_to notices_url, notice: 'Notice was successfully destroyed.' }
       format.json { head :no_content }
@@ -66,7 +66,7 @@ class NoticesController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_notice
-      @notice = Notice.find(params[:id])
+      @notices = Notice.find(params[:id])
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.

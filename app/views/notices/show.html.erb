@@ -2,19 +2,19 @@
 <meta charset="UTF-8","euc-kr">
 <p>
   <strong>Title:</strong>
-  <%= @notice.title %>
+  <%= @notices.title %>
 </p>
 
 
 <p>
   <strong>Writer:</strong>
-  <%= @notice.writer %>
+  <%= @notices.writer %>
 </p>
 
 <p>
   <strong>Created on:</strong>
-  <%= @notice.created_on %>
+  <%= @notices.created_on %>
 </p>
 
-<%= link_to 'Edit', edit_notice_path(@notice) %> |
+<%= link_to 'Edit', edit_notice_path(@notices) %> |
 <%= link_to 'Back', notices_path %>
