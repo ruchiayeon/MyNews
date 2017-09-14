@@ -1,6 +1,7 @@
 require "nokogiri"
 require "open-uri"
 require 'uri'
+require "execjs"
 
 
 class Notice < ApplicationRecord
