@@ -1,6 +1,6 @@
 class CreateNotices < ActiveRecord::Migration[5.1]
   def change
-    create_table :notices.each do |t|
+    create_table :notice do |notice|
       t.string :title
       t.string :link
       t.string :writer

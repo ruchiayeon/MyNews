@@ -1,5 +1,5 @@
 <meta charset="UTF-8","euc-kr">
-<%= form_with(model: notice, local: true) do |form| %>
+<%= form_with(model: notice, local: true).each do |form| %>
   <% if notice.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(notice.errors.count, "error") %> prohibited this notice from being saved:</h2>
@@ -11,7 +11,7 @@
       </ul>
     </div>
   <% end %>
-
+<li>
   <div class="field">
     <%= form.label :title %>
     <%= form.text_field :title, id: :notice_title %>
@@ -32,3 +32,4 @@
     <%= form.submit %>
   </div>
 <% end %>
+</li>

@@ -12,13 +12,13 @@
 
 ActiveRecord::Schema.define(version: 20170809071951) do
 
-  create_table "notices", force: :cascade do |t|
-    t.string "title"
-    #t.string "link"
-    t.string "writer"
-    t.date "created_on"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+  create_table "notices", force: :cascade.each do |notice|
+    notice.string "title"
+    notice.string "link"
+    notice.string "writer"
+    notice.date "created_on"
+    notice.datetime "created_at", null: false
+    notice.datetime "updated_at", null: false
   end
 
 end

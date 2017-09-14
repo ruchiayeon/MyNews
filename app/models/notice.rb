@@ -17,11 +17,11 @@ class Notice < ApplicationRecord
             data = Nokogiri::HTML(open(url).read.encode("UTF-8"))
             
             
-            @notices = data.css("div.cont_thumb")
+            contents = data.css("div.cont_thumb")
             
           
             
-            @notices.each do |notice|
+            contents.each do |notice|
                   #하나하나 디버깅하기 따로뺴서 로그를 지속적으로 확인해야한다. 
                 
                 title = notice.css("a.link_txt").text.strip

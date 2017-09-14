@@ -26,7 +26,7 @@ class NoticesController < ApplicationController
   # POST /notices
   # POST /notices.json
   def create
-    @notices = Notice.new(params[:notices])
+    @notices = Notice.new(params[:notice])
 
     respond_to do |format|
       if @notices.save
