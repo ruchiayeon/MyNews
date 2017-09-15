@@ -26,12 +26,12 @@ class NoticesController < ApplicationController
   # POST /notices
   # POST /notices.json
   def create
-    @notices = Notice.new(params[:notice])
+    @notices = Notice.create(params[:notice])
 
     respond_to do |format|
       if @notices.save
         format.html { redirect_to @notices, notice: 'Notice was successfully created.' }
-        format.json { render :show, status: :created, location: @notice }
+        format.json { render :show, status: :created, location: @notices }
       else
         format.html { render :new }
         format.json { render json: @notices.errors, status: :unprocessable_entity }
