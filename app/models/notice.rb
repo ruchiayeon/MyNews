@@ -8,7 +8,7 @@ class Notice < ApplicationRecord
     def self.crawling
         
        
-        for i in 1..2
+        for i in 1..10
         
             
             url=URI.encode("http://media.daum.net/breakingnews/?page=#{i}")
