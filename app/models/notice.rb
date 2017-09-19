@@ -24,15 +24,16 @@ class Notice < ApplicationRecord
                 
                 title = contant.css("a.link_txt").text.strip
                 writer = contant.css("span.info_news").text.strip
-               
+                link = contant.css("a.link_txt")[0]['href'].strip
                 
                 p title 
                 p writer
-                
+                p link
                 
                Notice.create(
                     :title => title,
-                    :writer => writer,)
+                    :writer => writer,
+                    :link => link,)
                 
                 end
         end
