@@ -12,7 +12,7 @@
 
 ActiveRecord::Schema.define(version: 20170809071951) do
 
-  create_table "notice", force: :cascade.each do |t|
+  create_table "notices", force: :cascade do |t|
     t.string "title"
     t.string "link"
     t.string "writer"
