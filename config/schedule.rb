@@ -1,5 +1,11 @@
-every 1.day, :at => '8:00 pm' do
-  command "backup perform -t daily_db_backup >> /home/[user-account]/Backup/config/cron.log 2>&1"
+every :day, :at => '8:00 pm' do
+  command 'rails runner Notice.crawling' 
+end
+every :day, :at => '12:00 pm' do
+  command 'rails runner Notice.crawling' 
+end
+every :day, :at => '12:00 am' do
+  command 'rails runner Notice.crawling' 
 end
 
 # Use this file to easily define all of your cron jobs.
